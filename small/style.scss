@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Song+Myung");
+%font {
+  font-family: "Song Myung", serif;
+  color: purple;
+  text-shadow: white -1px -1px 5px, blue 1px 1px 5px;
+}
+body {
+  @extend %font;
+  text-align: center;
+  background-color: #a3d5d3;
+}
+
+@media (min-width: 769px) {
+  %angle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: radial-gradient(circle, yellow, blue, white);
+    transform: rotate(45deg);
+  }
+  @keyframes star {
+    0% {
+      transform: scale(1);
+      background-image: radial-gradient(
+        circle,
+        cyan,
+        blue 11%,
+        cyan 28%,
+        transparent 50%
+      );
+    }
+    50% {
+      transform: scale(1.2);
+      background-image: radial-gradient(
+        circle,
+        blue,
+        white,
+        cyan,
+        transparent 50%
+      );
+    }
+    100% {
+      transform: scale(1.5);
+      background-image: radial-gradient(
+        circle,
+        blue,
+        cyan,
+        white,
+        transparent 50%
+      );
+    }
+  }
+  .star-angled {
+    margin: 10px 20px 1px;
+    @extend %angle;
+    &::before {
+      @extend %angle;
+      content: "";
+    }
+  }
+  .flex {
+    display: flex;
+    justify-content: space-around;
+    width: 98%;
+  }
+  .star-circle {
+    transition: 3s;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-image: radial-gradient(
+      circle,
+      cyan,
+      blue 11%,
+      cyan 28%,
+      transparent 50%
+    );
+  }
+  .anim-star {
+    animation: star 3s infinite alternate;
+  }
+}
+h1 {
+  background-image: linear-gradient(to left, pink, blue, cyan, blue, pink);
+  border-radius: 40px 10px;
+}
+@keyframes text {
+  0% {
+    color: hsl(240, 100%, 50%);
+    text-shadow: 0 0 5px white, 0 0 10px white;
+  }
+  50% {
+    color: hsl(210, 100%, 50%);
+    text-shadow: 0 0 10px white, 0 0 15px white, 0 0 25px white, 0 0 30px white;
+  }
+  100% {
+    color: hsl(180, 100%, 50%);
+    text-shadow: 0 0 15px white, 0 0 25px white, 0 0 30px white, 0 0 35px white;
+  }
+}
+.anim-text {
+  animation: text 5s infinite alternate;
+}
+.anim-button {
+  &:hover {
+    background-image: linear-gradient(to left, cyan, blue, cyan);
+    transform: scale(1.4, 1.2);
+  }
+  &:active {
+    transform: scale(1.0);
+    box-shadow: none;
+  }
+}
+p,
+#quote-box {
+  font-size: 22px;
+}
+#quote-box {
+  padding-top: 20px;
+  border: blue groove 5px;
+  color: white;
+}
+button {
+  @extend %font;
+  transition: 1s;
+  a {
+    transition: 1s;
+    color: purple;
+  }
+  &:hover,
+  &:hover a {
+    cursor: pointer;
+    color: orchid;
+    text-shadow: 1px 1px 1px red;
+  }
+  outline: none;
+  margin: 50px;
+  font-size: 18px;
+  width: 170px;
+  background: linear-gradient(to left, blue, cyan, blue) #8c9eff;
+  border: groove blue 3px;
+  border-radius: 20px 5px;
+  padding: 5px 10px;
+  box-shadow: blue 3px 3px 10px 3px;
+}
