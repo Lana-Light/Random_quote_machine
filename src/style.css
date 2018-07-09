@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Song+Myung");
+body, button {
+  font-family: "Song Myung", serif;
+  color: purple;
+  text-shadow: white -1px -1px 5px, blue 1px 1px 5px;
+}
+
+body {
+  text-align: center;
+  background-color: #a3d5d3;
+}
+
+@media (min-width: 769px) {
+  h1::before, h1::after {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    content: "";
+    border-radius: 50%;
+    margin: 5px 10px -5px;
+    background-image: radial-gradient(circle, yellow, blue, white);
+  }
+
+  @keyframes star {
+    0% {
+      transform: scale(1);
+      background-image: radial-gradient(circle, cyan, blue 11%, cyan 28%, transparent 50%);
+    }
+    50% {
+      transform: scale(1.2);
+      background-image: radial-gradient(circle, blue, white, cyan, transparent 50%);
+    }
+    100% {
+      transform: scale(1.5);
+      background-image: radial-gradient(circle, blue, cyan, white, transparent 50%);
+    }
+  }
+  .q-box div:first-child {
+    display: flex;
+    width: 70%;
+    margin: auto;
+  }
+  .q-box div:first-child q {
+    width: 80%;
+  }
+
+  .star-circle::before, .star-circle::after {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    content: "";
+    border-radius: 0;
+    transition: 3s;
+    background-image: radial-gradient(circle, cyan, blue 11%, cyan 28%, transparent 50%);
+  }
+
+  .anim-star::before, .anim-star::after {
+    animation: star 3s infinite alternate;
+  }
+}
+h1 {
+  background-image: linear-gradient(to left, pink, blue, cyan, blue, pink);
+  border-radius: 40px 10px;
+}
+
+@keyframes text {
+  0% {
+    text-shadow: 0 0 5px white, 0 0 10px white;
+  }
+  50% {
+    text-shadow: 0 0 10px white, 0 0 15px white, 0 0 25px white, 0 0 30px white;
+  }
+  100% {
+    text-shadow: 0 0 15px white, 0 0 25px white, 0 0 30px white, 0 0 35px white;
+  }
+}
+p,
+.q-box {
+  font-size: 22px;
+}
+
+.q-box {
+  padding-top: 20px;
+  border: blue groove 5px;
+  color: white;
+}
+
+.anim-text {
+  color: blue;
+  animation: text 5s infinite alternate;
+}
+
+.anim-button:hover {
+  background-image: linear-gradient(to left, cyan, blue, cyan);
+  transform: scale(1.4, 1.2);
+}
+.anim-button:active {
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.che-input {
+  display: none;
+}
+
+.che-span {
+  all: initial;
+}
+.che-span::before {
+  width: 35px;
+  height: 15px;
+  display: inline-block;
+  content: "Off";
+  border-radius: 20%;
+  color: red;
+  background: pink;
+  border: red thin solid;
+  text-align: center;
+  padding: 5px;
+}
+.che-input:checked + .che-span::before {
+  color: green;
+  background: lime;
+  border: green thin solid;
+  content: "On";
+}
+.che-input:hover + .che-span::before {
+  cursor: pointer;
+  color: #dd2c00;
+  background: yellow;
+  border: #dd2c00 thin solid;
+}
+
+button {
+  transition: 1s;
+  outline: none;
+  margin: 50px;
+  font-size: 18px;
+  width: 170px;
+  background: linear-gradient(to left, blue, cyan, blue) #8c9eff;
+  border: groove blue 3px;
+  border-radius: 20px 5px;
+  padding: 5px 10px;
+  box-shadow: blue 3px 3px 10px 3px;
+}
+button a {
+  transition: 1s;
+  color: purple;
+}
+button:hover, button:hover a {
+  cursor: pointer;
+  color: orchid;
+  text-shadow: 1px 1px 1px red;
+}
