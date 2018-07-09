@@ -81,7 +81,7 @@ class App extends React.Component {
             </p>
           )}
           <label>
-            Animation <input onClick={this.animation} type="checkbox" class="che-input" /><span class="che-span"></span>
+            Animation <input onClick={this.animation} type="checkbox" className="che-input" /><span className="che-span"></span>
           </label>
           <br />
           <button
